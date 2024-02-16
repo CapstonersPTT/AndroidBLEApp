@@ -19,7 +19,7 @@ class MainActivity : ComponentActivity() {
             BLEAttempt2Theme {
                 // A surface container using the 'background' color from the theme
                 Surface(modifier = Modifier.fillMaxSize(), color = MaterialTheme.colorScheme.background) {
-                    Greeting("Android")
+                    Greeting("120 / 80")
                 }
             }
         }
@@ -27,9 +27,9 @@ class MainActivity : ComponentActivity() {
 }
 
 @Composable
-fun Greeting(name: String, modifier: Modifier = Modifier) {
+fun Greeting(bloodPressure: String, modifier: Modifier = Modifier) {
     Text(
-            text = "Hello $name!",
+            text = "Blood Pressure Reading, $bloodPressure!",
             modifier = modifier
     )
 }
@@ -38,6 +38,6 @@ fun Greeting(name: String, modifier: Modifier = Modifier) {
 @Composable
 fun GreetingPreview() {
     BLEAttempt2Theme {
-        Greeting("Android")
+        Greeting("120 / 80")
     }
 }
