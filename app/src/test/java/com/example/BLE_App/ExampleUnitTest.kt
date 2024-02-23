@@ -1,4 +1,4 @@
-package com.example.bleattempt2
+package com.example.BLE_App
 
 import org.junit.Test
 

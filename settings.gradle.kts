@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "BLE attempt2"
+rootProject.name = "BLE_App"
 include(":app")
  

@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.bleattempt2"
+    namespace = "com.example.BLE_App"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.bleattempt2"
+        applicationId = "com.example.BLE_App"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

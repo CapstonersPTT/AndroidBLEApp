@@ -1,4 +1,4 @@
-package com.example.bleattempt2.ui.theme
+package com.example.BLE_App.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
