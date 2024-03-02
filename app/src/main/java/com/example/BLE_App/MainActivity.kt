@@ -8,6 +8,7 @@ import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
+import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -17,6 +18,7 @@ import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
+import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
@@ -26,6 +28,9 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
+import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
@@ -49,7 +54,7 @@ class MainActivity : ComponentActivity() {
                 Surface(modifier = Modifier.fillMaxSize()) {
 //                    val bloodPressure = bleManager.getBloodPressureReading()
 //                    Greeting(bloodPressure)
-                    Greeting("180 / 90")
+                    Greeting("70 / 40")
                 }
             }
         }
@@ -58,33 +63,35 @@ class MainActivity : ComponentActivity() {
 
     data class BPColors(val status: Color, val card: Color, val glow: Color)
 
-    enum class BPRanges(val color: BPColors) {
+    enum class BPRanges(val color: BPColors, val title: String) {
         HYPOTENSIONALERT(
             BPColors(
                 BloodPressurePurple,
                 BloodPressureCardPurple,
                 BloodPressureGlowPurple
-            )
+            ),
+            "Critical Hypotension"
         ),
         HYPOTENSION(
             BPColors(
                 BloodPressurePurple,
                 BloodPressureCardPurple,
                 BloodPressureGlowPurple
-            )
+            ),
+            "Hypotensive"
         ),
-        LOW(BPColors(BloodPressureBlue, BloodPressureCardBlue, BloodPressureGlowBlue)),
-        NORMAL(BPColors(BloodPressureGreen, BloodPressureCardGreen, BloodPressureGlowGreen)),
-        ELEVATED(BPColors(BloodPressureYellow, BloodPressureCardYellow, BloodPressureGlowYellow)),
+        LOW(BPColors(BloodPressureBlue, BloodPressureCardBlue, BloodPressureGlowBlue), "Low"),
+        NORMAL(BPColors(BloodPressureGreen, BloodPressureCardGreen, BloodPressureGlowGreen), "Normal"),
+        ELEVATED(BPColors(BloodPressureYellow, BloodPressureCardYellow, BloodPressureGlowYellow), "Elevated"),
         HYPERTENSION1(
             BPColors(
                 BloodPressureOrange,
                 BloodPressureCardOrange,
                 BloodPressureGlowOrange
-            )
+            ), "Hypertensive"
         ),
-        HYPERTENSION2(BPColors(BloodPressureRed, BloodPressureCardRed, BloodPressureGlowRed)),
-        HYPERTENSIONALERT(BPColors(BloodPressureRed, BloodPressureCardRed, BloodPressureGlowRed))
+        HYPERTENSION2(BPColors(BloodPressureRed, BloodPressureCardRed, BloodPressureGlowRed), "Very Hypertensive"),
+        HYPERTENSIONALERT(BPColors(BloodPressureRed, BloodPressureCardRed, BloodPressureGlowRed), "Critical Hypertension")
     }
 
     /**
@@ -103,7 +110,7 @@ class MainActivity : ComponentActivity() {
             BPRanges.LOW
         } else if (systolic > 180 || diastolic > 110) {
             BPRanges.HYPERTENSIONALERT
-        } else if (systolic > 160 || diastolic > 90) {
+        } else if (systolic > 140 || diastolic > 90) {
             BPRanges.HYPERTENSION2
         } else if (systolic < 120 && diastolic < 80) {
             BPRanges.NORMAL
@@ -118,7 +125,9 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun Greeting(bloodPressure: String, modifier: Modifier = Modifier) {
         val (systolic, diastolic) = bloodPressure.split(" / ").map { it.toInt() }
-        val (bpStatusColor, bpCardColor, bpGlowColor) = findBPRange(systolic, diastolic).color
+        val bpRange = findBPRange(systolic, diastolic)
+        val (bpStatusColor, bpCardColor, bpGlowColor) = bpRange.color
+        val bpTitle = bpRange.title
 
         val cardColors = CardDefaults.cardColors(containerColor = Color.DarkGray)
 
@@ -130,74 +139,128 @@ class MainActivity : ComponentActivity() {
             colors = cardColors,
         ) {
 
-            Column(
-                modifier = modifier
-                    .padding(30.dp)
-                    .fillMaxSize(),
-
-                horizontalAlignment = Alignment.CenterHorizontally
-            ) {
+            Row(modifier = modifier
+                .padding(16.dp), verticalAlignment = Alignment.CenterVertically){
+                Icon(
+                    imageVector = ImageVector.vectorResource(id = R.drawable.pulse_screen),
+                    contentDescription = "pulse",
+                    tint = BloodPressureRed
+                )
+                Spacer(
+                    modifier=modifier.width(16.dp)
+                )
                 Text(
-                    text = "Live Blood Pressure",
+                    text = "P U L S E W A V E",
                     style = TextStyle(
                         fontFamily = OpenSans,
-                        fontWeight = FontWeight(700),
-                        fontSize = 26.sp,
+                        fontWeight = FontWeight(500),
+                        fontSize = 36.sp,
                     ),
-                    color = MaterialTheme.colorScheme.onSurface
+                    color = BloodPressureRed
                 )
-                Spacer(modifier = Modifier.height(8.dp))
-                Box(
-                    modifier = Modifier
-                        .shadow(
-                            elevation = 4.dp,
-                            shape = RoundedCornerShape(20.dp),
-                            spotColor = bpGlowColor,
-                        )
-                        .padding(4.dp)
-                        .background(color = bpCardColor, shape = (RoundedCornerShape(16.dp)))
-                        .height(IntrinsicSize.Max)
-
+            }
+            Box(
+                modifier=modifier
+                    .height(1.dp)
+                    .background(color=Color(0xFF222222), shape= RectangleShape)
+                    .fillMaxSize()
+            ){}
+            Column(
+                modifier = modifier
+                    .padding(24.dp, 20.dp)
+                    .height(IntrinsicSize.Max),
                 ) {
-                    Column(
-                        horizontalAlignment = Alignment.CenterHorizontally,
-                        modifier = modifier
-                            .width(IntrinsicSize.Max)
-                            .padding(80.dp, 16.dp)
-                    ) {
-                        Text(
-                            modifier = modifier.padding(10.dp, 2.dp),
 
-                            text = "$systolic",
-                            style = TextStyle(
-                                fontFamily = OpenSans,
-                                fontWeight = FontWeight(700),
-                                fontSize = 40.sp,
-                            ),
-                            color = bpStatusColor
-                        )
-                        Box(
-                            modifier = modifier
-                                .height(5.dp)
-                                .background(
-                                    color = bpStatusColor,
-                                    shape = RoundedCornerShape(3.dp)
-                                )
-                                .fillMaxWidth()
-                        )
+                Row(modifier = modifier.height(IntrinsicSize.Max).fillMaxSize()) {
+                    Text(
+                        text = "Live Blood Pressure: ",
+                        style = TextStyle(
+                            fontFamily = OpenSans,
+                            fontWeight = FontWeight(700),
+                            fontSize = 15.sp,
+                        ),
+                        color = MaterialTheme.colorScheme.onSurface
+                    )
+                    Spacer(modifier.weight(1f))
                         Text(
-                            modifier = modifier.padding(2.dp),
-                            text = "$diastolic",
+                            text = bpTitle,
                             style = TextStyle(
                                 fontFamily = OpenSans,
                                 fontWeight = FontWeight(700),
-                                fontSize = 40.sp,
+                                fontSize = 15.sp,
                             ),
                             color = bpStatusColor
                         )
+
+                }
+                Spacer(modifier = Modifier.height(4.dp))
+                Column(
+                    modifier = modifier
+                        .height(IntrinsicSize.Max)
+                        .fillMaxSize(),
+                    horizontalAlignment = Alignment.CenterHorizontally
+                ) {
+                    Box(
+                        modifier = Modifier
+                            .shadow(
+                                elevation = 4.dp,
+                                shape = RoundedCornerShape(20.dp),
+                                spotColor = bpGlowColor,
+                            )
+                            .padding(0.dp, 4.dp)
+                            .background(color = bpCardColor, shape = (RoundedCornerShape(16.dp)))
+                            .height(IntrinsicSize.Max)
+                            .fillMaxSize(),
+                        contentAlignment = Alignment.TopCenter
+                    ) {
+                        Column(
+                            horizontalAlignment = Alignment.CenterHorizontally,
+                            modifier = modifier
+                                .width(IntrinsicSize.Max)
+                                .padding(80.dp, 16.dp)
+                        ) {
+
+                            Text(
+                                modifier = modifier.padding(10.dp, 2.dp),
+
+                                text = "$systolic",
+                                style = TextStyle(
+                                    fontFamily = OpenSans,
+                                    fontWeight = FontWeight(700),
+                                    fontSize = 40.sp,
+                                ),
+                                color = bpStatusColor
+                            )
+
+                            Box(
+                                modifier = modifier
+                                    .height(4.dp)
+                                    .background(
+                                        color = bpStatusColor,
+                                        shape = RoundedCornerShape(4.dp)
+                                    )
+                                    .fillMaxWidth()
+                            )
+                            Text(
+                                modifier = modifier.padding(2.dp),
+                                text = "$diastolic",
+                                style = TextStyle(
+                                    fontFamily = OpenSans,
+                                    fontWeight = FontWeight(700),
+                                    fontSize = 40.sp,
+                                ),
+                                color = bpStatusColor
+                            )
+                        }
                     }
                 }
             }
+            Box(
+                modifier=modifier
+                    .height(1.dp)
+                    .background(color=Color(0xFF222222), shape= RectangleShape)
+                    .fillMaxSize()
+            ){}
         }
     }
 
@@ -206,7 +269,7 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun GreetingPreview() {
         BLETheme {
-            Greeting("110 / 70")
+            Greeting("181 / 80")
         }
     }
 }

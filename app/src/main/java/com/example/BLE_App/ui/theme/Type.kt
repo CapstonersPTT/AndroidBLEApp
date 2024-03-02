@@ -40,3 +40,10 @@ val OpenSans = FontFamily(
         Font(R.font.open_sans, FontWeight(500), FontStyle.Normal),
         Font(R.font.open_sans, FontWeight(500), FontStyle.Italic)
 )
+
+val Asap = FontFamily(
+        Font(R.font.asap_regular, FontWeight(500), FontStyle.Normal),
+        Font(R.font.asap_italic, FontWeight(500), FontStyle.Italic),
+        Font(R.font.asap_bold, FontWeight(700), FontStyle.Normal),
+        Font(R.font.asap_bolditalic, FontWeight(700), FontStyle.Italic),
+)
