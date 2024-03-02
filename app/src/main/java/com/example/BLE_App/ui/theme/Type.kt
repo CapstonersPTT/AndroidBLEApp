@@ -2,9 +2,12 @@ package com.example.BLE_App.ui.theme
 
 import androidx.compose.material3.Typography
 import androidx.compose.ui.text.TextStyle
+import androidx.compose.ui.text.font.Font
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.text.font.FontStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
+import com.example.BLE_App.R
 
 // Set of Material typography styles to start with
 val Typography = Typography(
@@ -31,4 +34,16 @@ val Typography = Typography(
         letterSpacing = 0.5.sp
     )
     */
+)
+
+val OpenSans = FontFamily(
+        Font(R.font.open_sans, FontWeight(500), FontStyle.Normal),
+        Font(R.font.open_sans, FontWeight(500), FontStyle.Italic)
+)
+
+val Asap = FontFamily(
+        Font(R.font.asap_regular, FontWeight(500), FontStyle.Normal),
+        Font(R.font.asap_italic, FontWeight(500), FontStyle.Italic),
+        Font(R.font.asap_bold, FontWeight(700), FontStyle.Normal),
+        Font(R.font.asap_bolditalic, FontWeight(700), FontStyle.Italic),
 )

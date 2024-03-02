@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<font-family xmlns:android="http://schemas.android.com/apk/res/android">
+    <font
+        android:font="@font/asap_regular"
+        android:fontWeight="700"
+        android:fontStyle="normal"
+        />
+    <font
+        android:font="@font/asap_italic"
+        android:fontWeight="500"
+        android:fontStyle="italic"
+        />
+    <font
+        android:font="@font/asap_bold"
+        android:fontWeight="700"
+        android:fontStyle="normal"
+        />
+    <font
+        android:font="@font/asap_bolditalic"
+        android:fontWeight="700"
+        android:fontStyle="italic"
+        />
+</font-family>

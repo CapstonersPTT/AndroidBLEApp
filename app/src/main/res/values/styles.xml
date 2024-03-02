@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <style name="custom_fonts" parent="@android:style/TextAppearance.Small">
+        <item name="android:fontFamily">@font/opensans</item>
+    </style>
+</resources>
