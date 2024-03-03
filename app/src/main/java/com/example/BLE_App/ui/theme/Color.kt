@@ -1,8 +1,6 @@
 package com.example.BLE_App.ui.theme
 
-import android.health.connect.datatypes.BloodPressureRecord.BloodPressureMeasurementLocation
 import androidx.compose.ui.graphics.Color
-import com.example.BLE_App.R
 
 val Purple80 = Color(0xFFD0BCFF)
 val PurpleGrey80 = Color(0xFFCCC2DC)
@@ -32,3 +30,5 @@ val BloodPressureGlowYellow = Color(0xFF222200)
 val BloodPressureGlowGreen = Color(0xFF002200)
 val BloodPressureGlowBlue = Color(0xFF000022)
 val BloodPressureGlowPurple = Color(0xFF110022)
+
+val Neutral10 = Color(0xFF555555)
