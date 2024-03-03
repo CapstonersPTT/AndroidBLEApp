@@ -7,8 +7,12 @@ import androidx.activity.compose.setContent
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
+<<<<<<< Updated upstream
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
+=======
+<<<<<<< Updated upstream
+>>>>>>> Stashed changes
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
 import androidx.compose.foundation.layout.fillMaxWidth
@@ -20,27 +24,52 @@ import androidx.compose.material3.Card
 import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
+=======
+import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
+>>>>>>> Stashed changes
 import androidx.compose.material3.Surface
-import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.clip
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+<<<<<<< Updated upstream
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+=======
+<<<<<<< Updated upstream
+=======
+import androidx.compose.ui.graphics.RectangleShape
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 import androidx.compose.ui.tooling.preview.Preview
-import androidx.compose.ui.unit.dp
 //import com.example.BLE_App.data.BLEManager
 import com.example.BLE_App.ui.theme.BLETheme
+<<<<<<< Updated upstream
 import com.example.BLE_App.ui.theme.OpenSans
 import androidx.compose.ui.unit.sp
 import com.example.BLE_App.ui.theme.*
 
+=======
+<<<<<<< Updated upstream
+=======
+import com.example.BLE_App.CurrentReadingSection.CurrentReadingSection
+import com.example.BLE_App.ui.common.BPColors
+import com.example.BLE_App.ui.common.BPRanges
+import com.example.BLE_App.ui.common.SectionDivider
+import com.example.BLE_App.ui.common.findBPRange
+import com.example.BLE_App.ui.theme.*
+
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
 
 class MainActivity : ComponentActivity() {
 //    private lateinit var bleManager: BLEManager
@@ -54,12 +83,21 @@ class MainActivity : ComponentActivity() {
                 Surface(modifier = Modifier.fillMaxSize()) {
 //                    val bloodPressure = bleManager.getBloodPressureReading()
 //                    Greeting(bloodPressure)
+<<<<<<< Updated upstream
                     Greeting("70 / 40")
+=======
+<<<<<<< Updated upstream
+                    Greeting("180 / 90")
+=======
+                    Greeting(70, 40)
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
                 }
             }
         }
     }
 
+<<<<<<< Updated upstream
 
     data class BPColors(val status: Color, val card: Color, val glow: Color)
 
@@ -150,6 +188,7 @@ class MainActivity : ComponentActivity() {
                     modifier=modifier.width(16.dp)
                 )
                 Text(
+<<<<<<< Updated upstream
                     text = "P U L S E W A V E",
                     style = TextStyle(
                         fontFamily = OpenSans,
@@ -157,7 +196,41 @@ class MainActivity : ComponentActivity() {
                         fontSize = 36.sp,
                     ),
                     color = BloodPressureRed
+=======
+                    text = "$systolic / $diastolic",
+                    style = MaterialTheme.typography.headlineMedium,
+                    color = bpStatusColor
+=======
+    @Composable
+    fun Greeting(systolic: Int, diastolic: Int, modifier: Modifier = Modifier) {
+        val bpRange = findBPRange(systolic, diastolic)
+        val (bpStatusColor, bpCardColor, bpGlowColor) = bpRange.color
+        val bpTitle = bpRange.title
+        val cardColors = CardDefaults.cardColors(containerColor = Color.DarkGray)
+
+        Card(
+            modifier = modifier
+                .fillMaxSize(),
+            shape = RectangleShape,
+            colors = cardColors,
+        ) {
+            BrandedHeader()
+            Column(modifier=Modifier
+                .verticalScroll(
+                    state= rememberScrollState(),
+>>>>>>> Stashed changes
                 )
+            ) {
+                CurrentReadingSection(
+                    systolic = systolic,
+                    diastolic = diastolic,
+                    bpTitle = bpTitle,
+                    bpStatusColor = bpStatusColor,
+                    bpCardColor = bpCardColor,
+                    bpGlowColor = bpGlowColor
+>>>>>>> Stashed changes
+                )
+                SectionDivider()
             }
             Box(
                 modifier=modifier
@@ -264,12 +337,28 @@ class MainActivity : ComponentActivity() {
         }
     }
 
+<<<<<<< Updated upstream
 
+<<<<<<< Updated upstream
+=======
+
+
+=======
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
     @Preview(showBackground = true)
     @Composable
     fun GreetingPreview() {
         BLETheme {
+<<<<<<< Updated upstream
             Greeting("181 / 80")
+=======
+<<<<<<< Updated upstream
+            Greeting("120 / 80")
+=======
+            Greeting(190, 70)
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
         }
     }
 }

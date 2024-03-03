@@ -10,6 +10,12 @@ val Pink80 = Color(0xFFEFB8C8)
 
 val Purple40 = Color(0xFF6650a4)
 val PurpleGrey40 = Color(0xFF625b71)
+<<<<<<< Updated upstream
+=======
+<<<<<<< Updated upstream
+val Pink40 = Color(0xFF7D5260)
+=======
+>>>>>>> Stashed changes
 val Pink40 = Color(0xFF7D5260)
 
 val BloodPressureRed = Color(0xFFFFAAAA)
@@ -31,4 +37,11 @@ val BloodPressureGlowOrange = Color(0xFF221100)
 val BloodPressureGlowYellow = Color(0xFF222200)
 val BloodPressureGlowGreen = Color(0xFF002200)
 val BloodPressureGlowBlue = Color(0xFF000022)
+<<<<<<< Updated upstream
 val BloodPressureGlowPurple = Color(0xFF110022)
+=======
+val BloodPressureGlowPurple = Color(0xFF110022)
+
+val Neutral10 = Color(0xFF555555)
+>>>>>>> Stashed changes
+>>>>>>> Stashed changes
