@@ -15,29 +15,25 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.tooling.preview.Preview
-//import com.example.BLE_App.data.BLEManager
 import com.example.BLE_App.ui.theme.BLETheme
 import com.example.BLE_App.CurrentReadingSection.CurrentReadingSection
-import com.example.BLE_App.ui.common.BPColors
-import com.example.BLE_App.ui.common.BPRanges
+import com.example.BLE_App.data.BLEManager
 import com.example.BLE_App.ui.common.SectionDivider
 import com.example.BLE_App.ui.common.findBPRange
-import com.example.BLE_App.ui.theme.*
 
 
 class MainActivity : ComponentActivity() {
-//    private lateinit var bleManager: BLEManager
+    private lateinit var bleManager: BLEManager
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-//        bleManager = BLEManager()
+        bleManager = BLEManager(applicationContext)
 
         setContent {
             BLETheme {
                 Surface(modifier = Modifier.fillMaxSize()) {
-//                    val bloodPressure = bleManager.getBloodPressureReading()
-//                    Greeting(bloodPressure)
-                    Greeting(70, 40)
+                    val bloodPressure = bleManager.getBloodPressureReading()
+                    Greeting(bloodPressure[0], bloodPressure[1])
                 }
             }
         }
