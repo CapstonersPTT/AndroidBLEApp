@@ -12,7 +12,15 @@ import androidx.compose.ui.unit.dp
 import com.example.BLE_App.R
 
 @Composable
-fun CurrentReadingSection(systolic: Int, diastolic: Int, bpTitle: String, bpStatusColor: Color, bpCardColor: Color, bpGlowColor: Color, modifier: Modifier=Modifier) {
+fun CurrentReadingSection(
+    systolic: Int,
+    diastolic: Int,
+    bpTitle: String,
+    bpStatusColor: Color,
+    bpCardColor: Color,
+    bpGlowColor: Color,
+    modifier: Modifier=Modifier
+) {
     Column(
         modifier = modifier
             .padding(24.dp, 20.dp)
