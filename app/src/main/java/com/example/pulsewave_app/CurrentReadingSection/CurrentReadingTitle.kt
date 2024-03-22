@@ -1,4 +1,4 @@
-package com.example.BLE_App.CurrentReadingSection
+package com.example.pulsewave_app.CurrentReadingSection
 
 import androidx.compose.foundation.layout.IntrinsicSize
 import androidx.compose.foundation.layout.Row
@@ -13,7 +13,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.sp
-import com.example.BLE_App.ui.theme.OpenSans
+import com.example.pulsewave_app.ui.theme.OpenSans
 
 @Composable
 fun CurrentReadingTitle(bpStatusColor: Color, bpTitle: String, modifier: Modifier = Modifier) {

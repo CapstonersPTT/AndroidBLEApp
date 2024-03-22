@@ -1,4 +1,4 @@
-package com.example.BLE_App.ui.common
+package com.example.pulsewave_app.ui.common
 
 /**
  * This function references the following 2 charts:

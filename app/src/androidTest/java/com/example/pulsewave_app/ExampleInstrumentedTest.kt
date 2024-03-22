@@ -1,4 +1,4 @@
-package com.example.BLE_App
+package com.example.pulsewave_app
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4

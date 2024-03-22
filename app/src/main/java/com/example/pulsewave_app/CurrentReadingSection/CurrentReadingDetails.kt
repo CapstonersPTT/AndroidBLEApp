@@ -1,4 +1,4 @@
-package com.example.BLE_App.CurrentReadingSection
+package com.example.pulsewave_app.CurrentReadingSection
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -26,9 +26,9 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.BLE_App.R
-import com.example.BLE_App.ui.theme.Neutral10
-import com.example.BLE_App.ui.theme.OpenSans
+import com.example.pulsewave_app.R
+import com.example.pulsewave_app.ui.theme.Neutral10
+import com.example.pulsewave_app.ui.theme.OpenSans
 
 @Composable
 fun CurrentReadingDetails(

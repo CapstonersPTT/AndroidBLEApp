@@ -18,7 +18,7 @@
         android:theme="@style/Theme.BLEAttempt2"
         tools:targetApi="31">
         <activity
-            android:name=".MainActivity"
+            android:name="com.example.pulsewave_app.MainActivity"
             android:exported="true"
             android:theme="@style/Theme.BLEAttempt2">
             <intent-filter>

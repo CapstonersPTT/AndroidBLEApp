@@ -1,4 +1,4 @@
-package com.example.BLE_App.CurrentReadingSection
+package com.example.pulsewave_app.CurrentReadingSection
 
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
@@ -9,7 +9,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
-import com.example.BLE_App.R
+import com.example.pulsewave_app.R
 
 @Composable
 fun CurrentReadingSection(

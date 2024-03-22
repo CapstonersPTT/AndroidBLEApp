@@ -1,4 +1,4 @@
-package com.example.BLE_App.ui.theme
+package com.example.pulsewave_app.ui.theme
 
 import android.app.Activity
 import androidx.compose.material3.MaterialTheme
