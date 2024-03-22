@@ -1,4 +1,4 @@
-package com.example.BLE_App
+package com.example.pulsewave_app
 
 import android.os.Bundle
 import androidx.activity.ComponentActivity
@@ -16,13 +16,10 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.tooling.preview.Preview
 //import com.example.BLE_App.data.BLEManager
-import com.example.BLE_App.ui.theme.BLETheme
-import com.example.BLE_App.CurrentReadingSection.CurrentReadingSection
-import com.example.BLE_App.ui.common.BPColors
-import com.example.BLE_App.ui.common.BPRanges
-import com.example.BLE_App.ui.common.SectionDivider
-import com.example.BLE_App.ui.common.findBPRange
-import com.example.BLE_App.ui.theme.*
+import com.example.pulsewave_app.ui.theme.BLETheme
+import com.example.pulsewave_app.CurrentReadingSection.CurrentReadingSection
+import com.example.pulsewave_app.ui.common.SectionDivider
+import com.example.pulsewave_app.ui.common.findBPRange
 
 
 class MainActivity : ComponentActivity() {

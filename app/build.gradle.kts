@@ -4,11 +4,11 @@ plugins {
 }
 
 android {
-    namespace = "com.example.BLE_App"
+    namespace = "com.example.pulsewave_app"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.example.BLE_App"
+        applicationId = "com.example.pulsewave_app"
         minSdk = 24
         targetSdk = 34
         versionCode = 1

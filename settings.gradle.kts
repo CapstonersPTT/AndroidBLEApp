@@ -13,6 +13,6 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "BLE_App"
+rootProject.name = "pulsewave_app"
 include(":app")
  

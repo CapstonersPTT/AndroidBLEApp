@@ -1,4 +1,4 @@
-package com.example.BLE_App.ui.common
+package com.example.pulsewave_app.ui.common
 
 import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Box

@@ -1,26 +1,26 @@
-package com.example.BLE_App.ui.common
+package com.example.pulsewave_app.ui.common
 
-import com.example.BLE_App.ui.theme.BloodPressureBlue
-import com.example.BLE_App.ui.theme.BloodPressureCardBlue
-import com.example.BLE_App.ui.theme.BloodPressureCardGreen
-import com.example.BLE_App.ui.theme.BloodPressureCardOrange
-import com.example.BLE_App.ui.theme.BloodPressureCardPurple
-import com.example.BLE_App.ui.theme.BloodPressureCardRed
-import com.example.BLE_App.ui.theme.BloodPressureCardYellow
-import com.example.BLE_App.ui.theme.BloodPressureGlowBlue
-import com.example.BLE_App.ui.theme.BloodPressureGlowGreen
-import com.example.BLE_App.ui.theme.BloodPressureGlowOrange
-import com.example.BLE_App.ui.theme.BloodPressureGlowPurple
-import com.example.BLE_App.ui.theme.BloodPressureGlowRed
-import com.example.BLE_App.ui.theme.BloodPressureGlowYellow
-import com.example.BLE_App.ui.theme.BloodPressureGreen
-import com.example.BLE_App.ui.theme.BloodPressureOrange
-import com.example.BLE_App.ui.theme.BloodPressurePurple
-import com.example.BLE_App.ui.theme.BloodPressureRed
-import com.example.BLE_App.ui.theme.BloodPressureYellow
-import com.example.BLE_App.ui.theme.NoConnectionGrey
-import com.example.BLE_App.ui.theme.NoConnectionCardGrey
-import com.example.BLE_App.ui.theme.NoConnectionGlowGrey
+import com.example.pulsewave_app.ui.theme.BloodPressureBlue
+import com.example.pulsewave_app.ui.theme.BloodPressureCardBlue
+import com.example.pulsewave_app.ui.theme.BloodPressureCardGreen
+import com.example.pulsewave_app.ui.theme.BloodPressureCardOrange
+import com.example.pulsewave_app.ui.theme.BloodPressureCardPurple
+import com.example.pulsewave_app.ui.theme.BloodPressureCardRed
+import com.example.pulsewave_app.ui.theme.BloodPressureCardYellow
+import com.example.pulsewave_app.ui.theme.BloodPressureGlowBlue
+import com.example.pulsewave_app.ui.theme.BloodPressureGlowGreen
+import com.example.pulsewave_app.ui.theme.BloodPressureGlowOrange
+import com.example.pulsewave_app.ui.theme.BloodPressureGlowPurple
+import com.example.pulsewave_app.ui.theme.BloodPressureGlowRed
+import com.example.pulsewave_app.ui.theme.BloodPressureGlowYellow
+import com.example.pulsewave_app.ui.theme.BloodPressureGreen
+import com.example.pulsewave_app.ui.theme.BloodPressureOrange
+import com.example.pulsewave_app.ui.theme.BloodPressurePurple
+import com.example.pulsewave_app.ui.theme.BloodPressureRed
+import com.example.pulsewave_app.ui.theme.BloodPressureYellow
+import com.example.pulsewave_app.ui.theme.NoConnectionCardGrey
+import com.example.pulsewave_app.ui.theme.NoConnectionGlowGrey
+import com.example.pulsewave_app.ui.theme.NoConnectionGrey
 
 enum class BPRanges(
     val color: BPColors,

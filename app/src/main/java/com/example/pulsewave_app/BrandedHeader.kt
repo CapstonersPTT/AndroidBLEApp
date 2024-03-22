@@ -1,4 +1,4 @@
-package com.example.BLE_App
+package com.example.pulsewave_app
 
 import androidx.compose.foundation.layout.Row
 import androidx.compose.foundation.layout.Spacer
@@ -15,9 +15,10 @@ import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
-import com.example.BLE_App.ui.common.SectionDivider
-import com.example.BLE_App.ui.theme.BloodPressureRed
-import com.example.BLE_App.ui.theme.OpenSans
+import com.example.pulsewave_app.R
+import com.example.pulsewave_app.ui.common.SectionDivider
+import com.example.pulsewave_app.ui.theme.BloodPressureRed
+import com.example.pulsewave_app.ui.theme.OpenSans
 
 @Composable
 fun BrandedHeader(modifier: Modifier =Modifier){
