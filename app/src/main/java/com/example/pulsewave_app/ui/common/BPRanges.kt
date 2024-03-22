@@ -18,6 +18,9 @@ import com.example.pulsewave_app.ui.theme.BloodPressureOrange
 import com.example.pulsewave_app.ui.theme.BloodPressurePurple
 import com.example.pulsewave_app.ui.theme.BloodPressureRed
 import com.example.pulsewave_app.ui.theme.BloodPressureYellow
+import com.example.pulsewave_app.ui.theme.NoConnectionCardGrey
+import com.example.pulsewave_app.ui.theme.NoConnectionGlowGrey
+import com.example.pulsewave_app.ui.theme.NoConnectionGrey
 
 enum class BPRanges(
     val color: BPColors,
