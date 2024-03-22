@@ -31,7 +31,12 @@ import com.example.BLE_App.ui.theme.Neutral10
 import com.example.BLE_App.ui.theme.OpenSans
 
 @Composable
-fun CurrentReadingDetails(iconId: Int, title: String, items: Array<String>, modifier: Modifier = Modifier) {
+fun CurrentReadingDetails(
+    iconId: Int,
+    title: String,
+    items: Array<String>,
+    modifier: Modifier = Modifier
+) {
     Box(
         modifier = Modifier
             .shadow(
@@ -77,7 +82,9 @@ fun CurrentReadingDetails(iconId: Int, title: String, items: Array<String>, modi
                     ) {
                         Image(
                             modifier = modifier.graphicsLayer { rotationZ = 180f },
-                            imageVector = ImageVector.vectorResource(id = R.drawable.chevron_left_icon),
+                            imageVector = ImageVector.vectorResource(
+                                id = R.drawable.chevron_left_icon
+                            ),
                             contentDescription = "chevron",
                         )
                     }

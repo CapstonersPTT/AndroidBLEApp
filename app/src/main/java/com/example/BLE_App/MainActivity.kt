@@ -71,6 +71,7 @@ class MainActivity : ComponentActivity() {
                     bpGlowColor = bpGlowColor
                 )
                 SectionDivider()
+
             }
         }
     }
@@ -79,7 +80,7 @@ class MainActivity : ComponentActivity() {
     @Composable
     fun GreetingPreview() {
         BLETheme {
-            Greeting(190, 70)
+            Greeting(1, -1)
         }
     }
 }

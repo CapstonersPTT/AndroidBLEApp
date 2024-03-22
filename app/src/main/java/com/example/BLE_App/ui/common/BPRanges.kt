@@ -18,6 +18,9 @@ import com.example.BLE_App.ui.theme.BloodPressureOrange
 import com.example.BLE_App.ui.theme.BloodPressurePurple
 import com.example.BLE_App.ui.theme.BloodPressureRed
 import com.example.BLE_App.ui.theme.BloodPressureYellow
+import com.example.BLE_App.ui.theme.NoConnectionGrey
+import com.example.BLE_App.ui.theme.NoConnectionCardGrey
+import com.example.BLE_App.ui.theme.NoConnectionGlowGrey
 
 enum class BPRanges(
     val color: BPColors,
@@ -143,5 +146,18 @@ enum class BPRanges(
         arrayOf(""),
         true,
         true
+    ),
+    NULL(
+        BPColors(
+            NoConnectionGrey,
+            NoConnectionCardGrey,
+            NoConnectionGlowGrey,
+        ),
+        "No Connection",
+        arrayOf(""),
+        arrayOf(""),
+        arrayOf(""),
+        true,
+        true,
     )
 }

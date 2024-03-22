@@ -8,7 +8,9 @@ package com.example.BLE_App.ui.common
  * of safety.
  */
 fun findBPRange(systolic: Int, diastolic: Int): BPRanges {
-    return if (systolic > 180 || diastolic > 110) {
+    return if (systolic < 0 || diastolic < 0) {
+        BPRanges.NULL
+    } else if (systolic > 180 || diastolic > 110) {
         BPRanges.HYPERTENSIONALERT
     } else if (systolic > 140 || diastolic > 90) {
         BPRanges.HYPERTENSION2
