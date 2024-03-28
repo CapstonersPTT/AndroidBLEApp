@@ -42,9 +42,7 @@ enum class BPRanges(
         arrayOf(
             "Contact/seek emergency support",
             "Place yourself in a safe position, as you could lose consciousness",
-            "Get near others that can support you",
-            "Move slowly when changing posture, when standing, sitting, or bending down",
-            "Drink water",
+            "Get near others that can support you"
         ),
         arrayOf(""),
         true,
@@ -58,7 +56,9 @@ enum class BPRanges(
         ),
         "Hypotensive",
         arrayOf("Nausea", "Dizziness", "Tiredness", "Weakness"),
-        arrayOf(""),
+        arrayOf("Move slowly when changing posture, when standing, sitting, or bending down", 
+                "Drink water"
+        ),
         arrayOf(""),
         true,
         false
@@ -70,7 +70,9 @@ enum class BPRanges(
             BloodPressureGlowBlue
         ),
         "Low Normal",
-        arrayOf(),
+        arrayOf("Your blood pressure is currently lower than average, be prepared to monitor your levels more often for any further changes", 
+                "If you have forgotten to take any prescribed medicine today, make sure to do so"
+        ),
         arrayOf(),
         arrayOf(),
         false,
@@ -96,7 +98,9 @@ enum class BPRanges(
             BloodPressureGlowYellow
         ),
         "High",
-        arrayOf(),
+        arrayOf("Your blood pressure is currently lower than average, be prepared to monitor your levels more often for any further changes", 
+                "If you have forgotten to take any prescribed medicine today, make sure to do so"
+        ),
         arrayOf(),
         arrayOf(),
         false,
@@ -123,7 +127,7 @@ enum class BPRanges(
         ),
         "Very Hypertensive",
         arrayOf("Headaches", "Chest Pain", "Nausea", "Anxiety"),
-        arrayOf(""),
+        arrayOf("Avoid any stimulants such as caffeine or alcohol"),
         arrayOf(""),
         true,
         false
@@ -142,7 +146,11 @@ enum class BPRanges(
             "Nosebleeds",
             "Dizziness"
         ),
-        arrayOf(""),
+        arrayOf("Practice deep breathing or meditation to calm down", 
+                "Sit or lie down", 
+                "Avoid any intense exercise", 
+                "Contact/seek emergency support"
+        ),
         arrayOf(""),
         true,
         true
