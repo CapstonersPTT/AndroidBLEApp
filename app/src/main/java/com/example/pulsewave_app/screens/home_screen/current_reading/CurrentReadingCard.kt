@@ -1,4 +1,4 @@
-package com.example.pulsewave_app.home_screen.current_reading
+package com.example.pulsewave_app.screens.home_screen.current_reading
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -29,7 +29,7 @@ import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.pulsewave_app.R
 import com.example.pulsewave_app.ui.utils.findBPRange
-import com.example.pulsewave_app.ui.theme.BLETheme
+import com.example.pulsewave_app.ui.theme.PulseWaveTheme
 import com.example.pulsewave_app.ui.theme.OpenSans
 
 @Composable
@@ -39,10 +39,9 @@ fun CurrentReadingCard(
     bpStatusColor: Color,
     bpCardColor: Color,
     bpGlowColor: Color,
-    modifier: Modifier = Modifier
 ) {
     Column(
-        modifier = modifier
+        modifier = Modifier
             .height(IntrinsicSize.Max)
             .fillMaxSize(),
         horizontalAlignment = Alignment.CenterHorizontally
@@ -63,7 +62,7 @@ fun CurrentReadingCard(
         ) {
             Column(
                 horizontalAlignment = Alignment.CenterHorizontally,
-                modifier = modifier
+                modifier = Modifier
                     .width(IntrinsicSize.Max)
                     .padding(80.dp, 16.dp)
             ) {
@@ -72,7 +71,7 @@ fun CurrentReadingCard(
                      * Numerator/Systolic/Top text
                      */
                     Text(
-                        modifier = modifier.padding(10.dp, 2.dp),
+                        modifier = Modifier.padding(10.dp, 2.dp),
 
                         text = "$systolic",
                         style = TextStyle(
@@ -86,7 +85,7 @@ fun CurrentReadingCard(
                      * This is the fraction line
                      */
                     Box(
-                        modifier = modifier
+                        modifier = Modifier
                             .height(4.dp)
                             .background(
                                 color = bpStatusColor,
@@ -98,7 +97,7 @@ fun CurrentReadingCard(
                      * Denominator/Diastolic/Bottom Text
                      */
                     Text(
-                        modifier = modifier.padding(2.dp),
+                        modifier = Modifier.padding(2.dp),
                         text = "$diastolic",
                         style = TextStyle(
                             fontFamily = OpenSans,
@@ -130,7 +129,7 @@ fun CurrentReadingCardPreview() {
     val nullBpRange = findBPRange(nullSystolic, nullDiastolic)
     val (nullBpStatusColor, nullBpCardColor, nullBpGlowColor) = nullBpRange.color
     val cardColors = CardDefaults.cardColors(containerColor = Color.DarkGray)
-    BLETheme {
+    PulseWaveTheme {
         Card(
             modifier = Modifier
                 .fillMaxSize(),

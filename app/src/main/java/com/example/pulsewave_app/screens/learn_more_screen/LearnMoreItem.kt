@@ -1,8 +1,7 @@
-package com.example.pulsewave_app.learn_more_screen
+package com.example.pulsewave_app.screens.learn_more_screen
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
-import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.IntrinsicSize
@@ -22,7 +21,6 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
-import androidx.compose.ui.graphics.graphicsLayer
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.ParagraphStyle
@@ -35,7 +33,6 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.pulsewave_app.R
-import com.example.pulsewave_app.ui.theme.BLETheme
 import com.example.pulsewave_app.ui.theme.Neutral10
 import com.example.pulsewave_app.ui.theme.OpenSans
 import kotlin.text.Typography.bullet
@@ -45,7 +42,6 @@ fun LearnMoreItem(
     iconId: Int,
     title: String,
     items: Array<String>,
-    modifier: Modifier = Modifier
 ) {
     Box(
         modifier = Modifier
@@ -58,7 +54,7 @@ fun LearnMoreItem(
             .fillMaxSize(),
     ) {
         Column(
-            modifier = modifier
+            modifier = Modifier
                 .padding(12.dp)
         ) {
             Row(
@@ -66,9 +62,9 @@ fun LearnMoreItem(
             ) {
                 Image(
                     imageVector = ImageVector.vectorResource(id = iconId),
-                    contentDescription = "pulse",
+                    contentDescription = "heart icon",
                 )
-                Spacer(modifier = modifier.width(8.dp))
+                Spacer(modifier = Modifier.width(8.dp))
                 Text(
                     text = title,
                     style = TextStyle(
@@ -81,9 +77,9 @@ fun LearnMoreItem(
             }
 
             if (items.isNotEmpty()) {
-                Spacer(modifier = modifier.height(4.dp))
+                Spacer(modifier = Modifier.height(4.dp))
                 Row(
-                    modifier = modifier
+                    modifier = Modifier
                         .padding(26.dp, 8.dp, 0.dp, 8.dp)
 
                 ) {

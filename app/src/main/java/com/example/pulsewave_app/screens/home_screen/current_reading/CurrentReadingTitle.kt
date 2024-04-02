@@ -1,4 +1,4 @@
-package com.example.pulsewave_app.home_screen.current_reading
+package com.example.pulsewave_app.screens.home_screen.current_reading
 
 import androidx.compose.foundation.layout.Box
 import androidx.compose.foundation.layout.IntrinsicSize
@@ -21,13 +21,13 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.pulsewave_app.ui.utils.findBPRange
-import com.example.pulsewave_app.ui.theme.BLETheme
+import com.example.pulsewave_app.ui.theme.PulseWaveTheme
 import com.example.pulsewave_app.ui.theme.OpenSans
 
 @Composable
-fun CurrentReadingTitle(bpStatusColor: Color, bpTitle: String, modifier: Modifier = Modifier) {
+fun CurrentReadingTitle(bpStatusColor: Color, bpTitle: String) {
     Row(
-        modifier = modifier
+        modifier = Modifier
             .height(IntrinsicSize.Max)
             .fillMaxSize()
     ) {
@@ -40,7 +40,7 @@ fun CurrentReadingTitle(bpStatusColor: Color, bpTitle: String, modifier: Modifie
             ),
             color = MaterialTheme.colorScheme.onSurface
         )
-        Spacer(modifier.weight(1f))
+        Spacer(Modifier.weight(1f))
         Text(
             text = bpTitle,
             style = TextStyle(
@@ -63,7 +63,7 @@ fun CurrentReadingTitlePreview() {
     val (bpStatusColor) = bpRange.color
     val bpTitle = bpRange.title
     val cardColors = CardDefaults.cardColors(containerColor = Color.DarkGray)
-    BLETheme {
+    PulseWaveTheme {
         Card(
             modifier = Modifier
                 .fillMaxSize(),

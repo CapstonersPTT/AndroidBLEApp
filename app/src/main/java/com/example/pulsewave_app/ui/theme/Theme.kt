@@ -16,7 +16,7 @@ private val ColorScheme = darkColorScheme(
 )
 
 @Composable
-fun BLETheme(
+fun PulseWaveTheme(
     // Dynamic color is available on Android 12+
     dynamicColor: Boolean = true,
     content: @Composable () -> Unit
