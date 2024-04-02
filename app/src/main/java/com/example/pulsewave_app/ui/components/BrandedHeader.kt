@@ -22,8 +22,7 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.pulsewave_app.R
-import com.example.pulsewave_app.home_screen.HomeScreen
-import com.example.pulsewave_app.ui.theme.BLETheme
+import com.example.pulsewave_app.ui.theme.PulseWaveTheme
 import com.example.pulsewave_app.ui.theme.BloodPressureRed
 import com.example.pulsewave_app.ui.theme.OpenSans
 
@@ -58,7 +57,7 @@ fun BrandedHeader(modifier: Modifier =Modifier){
 @Composable
 fun BrandedHeaderPreview() {
     val cardColors = CardDefaults.cardColors(containerColor = Color.DarkGray)
-    BLETheme {
+    PulseWaveTheme {
         Card(
             modifier = Modifier
                 .fillMaxSize(),

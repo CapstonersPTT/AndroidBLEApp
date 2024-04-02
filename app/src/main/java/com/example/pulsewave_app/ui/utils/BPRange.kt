@@ -127,7 +127,7 @@ enum class BPRange(
         "Very Hypertensive",
         arrayOf("Headaches", "Chest Pain", "Nausea", "Anxiety"),
         arrayOf("Avoid any stimulants such as caffeine or alcohol"),
-        arrayOf(""),
+        arrayOf(),
         true,
         false
     ),
@@ -150,7 +150,7 @@ enum class BPRange(
                 "Avoid any intense exercise", 
                 "Contact/seek emergency support"
         ),
-        arrayOf(""),
+        arrayOf(),
         true,
         true
     ),

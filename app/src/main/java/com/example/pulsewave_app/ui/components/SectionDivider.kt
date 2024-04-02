@@ -15,7 +15,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
-import com.example.pulsewave_app.ui.theme.BLETheme
+import com.example.pulsewave_app.ui.theme.PulseWaveTheme
 
 @Composable
 fun SectionDivider(modifier: Modifier = Modifier) {
@@ -31,7 +31,7 @@ fun SectionDivider(modifier: Modifier = Modifier) {
 @Composable
 fun SectionDividerPreview() {
     val cardColors = CardDefaults.cardColors(containerColor = Color.DarkGray)
-    BLETheme {
+    PulseWaveTheme {
         Card(
             modifier = Modifier
                 .fillMaxSize(),
