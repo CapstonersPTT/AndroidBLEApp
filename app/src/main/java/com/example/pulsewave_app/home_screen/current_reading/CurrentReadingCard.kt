@@ -1,4 +1,4 @@
-package com.example.pulsewave_app.CurrentReadingSection
+package com.example.pulsewave_app.home_screen.current_reading
 
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.background
@@ -11,19 +11,25 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.width
 import androidx.compose.foundation.shape.RoundedCornerShape
+import androidx.compose.material3.Card
+import androidx.compose.material3.CardDefaults
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.draw.shadow
 import androidx.compose.ui.graphics.Color
+import androidx.compose.ui.graphics.RectangleShape
 import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.text.TextStyle
 import androidx.compose.ui.text.font.FontWeight
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.example.pulsewave_app.R
+import com.example.pulsewave_app.ui.utils.findBPRange
+import com.example.pulsewave_app.ui.theme.BLETheme
 import com.example.pulsewave_app.ui.theme.OpenSans
 
 @Composable
@@ -112,5 +118,37 @@ fun CurrentReadingCard(
     }
 }
 
+@Preview(showBackground = true)
+@Composable
+fun CurrentReadingCardPreview() {
+    val systolic = 110
+    val diastolic = 70
+    val bpRange = findBPRange(systolic, diastolic)
+    val (bpStatusColor, bpCardColor, bpGlowColor) = bpRange.color
+    val nullSystolic = -1
+    val nullDiastolic = -1
+    val nullBpRange = findBPRange(nullSystolic, nullDiastolic)
+    val (nullBpStatusColor, nullBpCardColor, nullBpGlowColor) = nullBpRange.color
+    val cardColors = CardDefaults.cardColors(containerColor = Color.DarkGray)
+    BLETheme {
+        Card(
+            modifier = Modifier
+                .fillMaxSize(),
+            shape = RectangleShape,
+            colors = cardColors,
+        ) {
+            Box(
+                modifier = Modifier.padding(24.dp, 20.dp),
+                ) {
+                CurrentReadingCard(systolic, diastolic, bpStatusColor, bpCardColor, bpGlowColor)
+            }
+            Card(
+                modifier = Modifier.padding(24.dp, 20.dp),
+            ) {
+                CurrentReadingCard(-1, -1, nullBpStatusColor, nullBpCardColor, nullBpGlowColor)
+            }
+        }
 
+    }
+}
 

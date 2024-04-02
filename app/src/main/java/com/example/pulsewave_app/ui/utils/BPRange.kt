@@ -1,5 +1,6 @@
-package com.example.pulsewave_app.ui.common
+package com.example.pulsewave_app.ui.utils
 
+import com.example.pulsewave_app.ui.theme.BPColors
 import com.example.pulsewave_app.ui.theme.BloodPressureBlue
 import com.example.pulsewave_app.ui.theme.BloodPressureCardBlue
 import com.example.pulsewave_app.ui.theme.BloodPressureCardGreen
@@ -22,7 +23,7 @@ import com.example.pulsewave_app.ui.theme.NoConnectionCardGrey
 import com.example.pulsewave_app.ui.theme.NoConnectionGlowGrey
 import com.example.pulsewave_app.ui.theme.NoConnectionGrey
 
-enum class BPRanges(
+enum class BPRange(
     val color: BPColors,
     val title: String,
     val symptoms: Array<String>,
@@ -44,7 +45,7 @@ enum class BPRanges(
             "Place yourself in a safe position, as you could lose consciousness",
             "Get near others that can support you"
         ),
-        arrayOf(""),
+        arrayOf(),
         true,
         true
     ),
@@ -56,10 +57,8 @@ enum class BPRanges(
         ),
         "Hypotensive",
         arrayOf("Nausea", "Dizziness", "Tiredness", "Weakness"),
-        arrayOf("Move slowly when changing posture, when standing, sitting, or bending down", 
-                "Drink water"
-        ),
-        arrayOf(""),
+        arrayOf(),
+        arrayOf(),
         true,
         false
     ),

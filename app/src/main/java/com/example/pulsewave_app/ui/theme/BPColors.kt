@@ -1,4 +1,4 @@
-package com.example.pulsewave_app.ui.common
+package com.example.pulsewave_app.ui.theme
 
 import androidx.compose.ui.graphics.Color
 
