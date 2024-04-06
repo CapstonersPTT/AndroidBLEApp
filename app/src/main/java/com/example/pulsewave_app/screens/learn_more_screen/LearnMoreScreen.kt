@@ -53,7 +53,7 @@ fun LearnMoreScreen(
                 style = TextStyle(
                     fontFamily = OpenSans,
                     fontWeight = FontWeight(700),
-                    fontSize = 25.sp
+                    fontSize = 24.sp
                 ),
                 color = Color.White
             )

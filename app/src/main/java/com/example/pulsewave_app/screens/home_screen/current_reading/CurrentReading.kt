@@ -29,7 +29,7 @@ fun CurrentReading(
 ) {
     Column(
         modifier = Modifier
-            .padding(0.dp, 20.dp)
+            .padding(0.dp, 16.dp, 0.dp, 16.dp)
             .height(IntrinsicSize.Max),
     ) {
         CurrentReadingTitle(bpStatusColor = bpStatusColor, bpTitle = bpTitle)
