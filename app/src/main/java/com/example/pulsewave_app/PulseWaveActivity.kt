@@ -29,12 +29,12 @@ enum class Screens { HOME, LEARN, CONFIGURE }
 val TAG = "PulseWaveApp.kt"
 
 class PulseWaveActivity : ComponentActivity() {
-//    private lateinit var bleManager: BLEManager
+    private lateinit var bleScan: BluetoothScanService
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        val bleManager = BluetoothScanService(this)
-//        val bloodPressure = bleManager.getBloodPressureReading()
+        val bleScan = BluetoothScanService(this)
+        //var bleManager = BLEManager(this)
 
         val initialSystolic = -1
         val initialDiastolic = -1
@@ -83,8 +83,8 @@ class PulseWaveActivity : ComponentActivity() {
                 }
 
                 Log.v("PulseWaveActivity.kt", "Start Scan")
-                Log.v("PulseWaveActivity.kt", "bleManager: $bleManager")
-                bleManager.scanLeDevice()
+                Log.v("PulseWaveActivity.kt", "bleManager: $bleScan")
+                bleScan.scanLeDevice()
             }
 
 
@@ -114,15 +114,12 @@ class PulseWaveActivity : ComponentActivity() {
                 }
             }
             //This should later be used for updating the blood pressure based on readings.
-            LaunchedEffect(Unit) {
+            LaunchedEffect(bleScan) {
                 while (true) {
-                    if (true) {
-                        externalSystolic -= 2
-                        externalDiastolic -= 1
-                        setSystolic(externalSystolic)
-                        setDiastolic(externalDiastolic)
-                        delay(1000)
-                    }
+                    println("Updating Blood Pressure")
+                    setSystolic(bleScan.getSystolic())
+                    setDiastolic(bleScan.getDiastolic())
+                    delay(500)
                 }
             }
 
