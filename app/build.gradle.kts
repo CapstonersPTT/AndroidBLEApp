@@ -64,6 +64,7 @@ dependencies {
     implementation("com.patrykandpatrick.vico:compose-m3:2.0.0-alpha.14")
     implementation("com.patrykandpatrick.vico:core:2.0.0-alpha.14")
     implementation("com.patrykandpatrick.vico:views:2.0.0-alpha.14")
+    implementation("androidx.appcompat:appcompat:1.6.1")
     testImplementation("junit:junit:4.13.2")
     androidTestImplementation("androidx.test.ext:junit:1.1.5")
     androidTestImplementation("androidx.test.espresso:espresso-core:3.5.1")

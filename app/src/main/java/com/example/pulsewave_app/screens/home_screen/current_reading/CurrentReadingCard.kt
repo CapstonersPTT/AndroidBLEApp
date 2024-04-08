@@ -120,7 +120,7 @@ fun CurrentReadingCard(
 @Preview(showBackground = true)
 @Composable
 fun CurrentReadingCardPreview() {
-    val systolic = 110
+    val systolic = 120
     val diastolic = 70
     val bpRange = findBPRange(systolic, diastolic)
     val (bpStatusColor, bpCardColor, bpGlowColor) = bpRange.color
