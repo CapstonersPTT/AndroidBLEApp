@@ -25,7 +25,19 @@ class BluetoothScanService(private val context: Context)  {
         context.getSystemService(Context.BLUETOOTH_SERVICE) as BluetoothManager
     private var bluetoothAdapter = bluetoothManager.adapter
 
+    private var systolic = -1;
+    private var diastolic = -1;
 
+
+    public fun getSystolic(): Int {
+        print(systolic)
+        return systolic
+    }
+
+    public fun getDiastolic(): Int {
+        print(diastolic)
+        return diastolic
+    }
 
 
     var bluetoothGatt: BluetoothGatt? = null
@@ -79,14 +91,15 @@ class BluetoothScanService(private val context: Context)  {
             Log.v("BluetoothScanService.kt", "onCharacteristicChanged")
 
             with(characteristic) {
-                val systolic = value.to16BitUnsignedInt()
-                val diastolic = value.takeSecondHalf().to16BitUnsignedInt()
+                systolic = value.to16BitUnsignedInt()
+                diastolic = value.takeSecondHalf().to16BitUnsignedInt()
                 Log.v("BluetoothScanService.kt", "Systolic: $systolic")
                 Log.v("BluetoothScanService.kt", "Diastolic: $diastolic")
                 Log.v("BluetoothScanService.kt", "ByteArray: " + value)
                 Log.v("BluetoothScanService.kt", "first16Hex: " + value.toHexString())
             }
         }
+
 
         fun ByteArray.takeSecondHalf(): ByteArray {
             return this.sliceArray(IntRange(2, 3))
